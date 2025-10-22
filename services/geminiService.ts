@@ -3,8 +3,8 @@ import { GoogleGenAI, Type } from "@google/genai";
 import { Address } from '../types';
 
 // Fix: The API key must be obtained from `process.env.API_KEY` as per coding guidelines, which resolves the TypeScript error.
-const apiKey = import.meta.env.VITE_GOOGLE_API_KEY;
-if (!apiKey) {
+const apiKey = process.env.GOOGLE_API_KEY;
+if (!apiKey) throw new Error("Missing GOOGLE_API_KEY environment variable");
 export async function extractAddressesFromImage(
   base64Image: string,
   mimeType: string
