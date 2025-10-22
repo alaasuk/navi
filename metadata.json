@@ -1,0 +1,5 @@
+{
+  "name": "Address Map Navigator",
+  "description": "An application that extracts addresses from an uploaded image of a document using AI and generates navigation links for each address.",
+  "requestFramePermissions": []
+}
