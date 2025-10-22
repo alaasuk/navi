@@ -2,7 +2,8 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { Address } from '../types';
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY as string });
+// Fix: The API key must be obtained from `process.env.API_KEY` as per coding guidelines, which resolves the TypeScript error.
+const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 export async function extractAddressesFromImage(
   base64Image: string,
@@ -72,4 +73,3 @@ export async function extractAddressesFromImage(
     throw new Error("Failed to extract addresses from the image. The AI model may be temporarily unavailable or the image format is not supported.");
   }
 }
-   
